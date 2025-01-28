@@ -10,14 +10,20 @@ function SchoolForm({id, removeSchoolForm}){
 
         <div className="school-form">
         <div className="input-box">
-        <label htmlFor="">School Name</label>
-        <input type="text" />
+        <div className="row">
+            <label htmlFor="">School Name</label>
+            <input type="text" />
+        </div>
 
-        <label htmlFor="">Title of Study</label>
-        <input type="text" />
+        <div className="row">
+            <label htmlFor="">Title of Study</label>
+            <input type="text" />
+        </div>
 
-        <label htmlFor="">Date of Study</label>
-        <input type="date" />
+        <div className="row">
+            <label htmlFor="">Date of Study</label>
+            <input type="date" />
+        </div>
 
         </div>
 

@@ -31,7 +31,10 @@ label{
 form {
   width: 100%; 
   padding: 2rem 2rem;
+  
 }
+
+
 
 
 input{
@@ -41,4 +44,22 @@ input{
   padding: 1.2rem 0.8rem;
 
  
+}
+
+#submit-btn{
+  max-width: 400px;
+  width: 100%;
+  background-color: rgb(52, 116, 255);
+  color: white;
+}
+
+#submit-btn:hover{
+ 
+  background-color: rgb(84, 137, 252);
+  
+}
+
+.adjust{
+  display: flex;
+  justify-content: center;
 }
