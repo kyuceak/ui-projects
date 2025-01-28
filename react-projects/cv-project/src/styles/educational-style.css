@@ -1,0 +1,43 @@
+.school {
+  width: 100%;
+}
+
+button {
+  padding: 0.5rem 2.3rem;
+  font-size: large;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: 2.5px solid rgb(45, 44, 44);
+}
+
+button:hover{
+    background-color:rgb(82, 148, 247);
+    color:white;
+    
+}
+
+.school-form{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+   
+}
+
+.school-form .input-box input{
+    max-width: 400px;
+
+
+    
+}
+
+.school-forms{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+
+#del-btn:hover{
+    background-color: red;
+}
