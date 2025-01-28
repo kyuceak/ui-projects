@@ -1,0 +1,101 @@
+
+body{
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+}
+
+
+.header-sidebar{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+ 
+
+}
+
+#reset-btn{
+  
+  font-size: large;
+  cursor: pointer;
+  padding: 0.5rem 6rem;
+  
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  background-color: #ff8484;
+  min-height: 100vh;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-box{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
+}
+
+label{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+input{
+  font-size: 1.2rem;
+  padding: 0.45rem 0.45rem;
+  
+}
+
+h2{
+  margin: 0;
+  margin-bottom: 1.5rem;
+ 
+}
+
+.personal-container{
+  background-color: #fff;
+  padding: 2rem 2rem;
+  box-shadow: 0 0 10px 10px rgb(0,0,0,0.2);
+  border-radius: 0.5rem;
+}
+
+.personal-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.education-container{
+  background-color: #fff;
+  padding: 2rem 2rem;
+  box-shadow: 0 0 10px 10px rgb(0,0,0,0.2);
+  border-radius: 0.5rem;
+}
+
+
+
+
+
+
+
+.cv-preview {
+  flex: 3;
+  
+  background-color: rgb(192, 181, 181);
+  
+
+}
+
+.cv h2, .cv h3 {
+  margin: 10px 0;
+}
