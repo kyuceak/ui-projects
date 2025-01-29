@@ -1,0 +1,66 @@
+.work-summary {
+    
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.2rem;
+
+}
+.work-summary:hover {
+    background: #e8e8e8;
+ 
+}
+
+.education-container{
+    padding: 0 !important;
+    border-radius: 0rem !important;
+    border-top-left-radius: 0.5rem !important;
+    border-top-right-radius: 0.5rem !important;
+    margin-bottom: 2rem;
+}
+
+.education-container h2{
+    margin: 2rem;
+}
+
+.practical-form{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+textarea {
+    box-sizing: border-box;
+    font-size: 1rem;
+    height: 4rem;
+    padding: 0.5rem 0.8rem;
+    resize: none;
+  }
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+}
+.actions button{
+    font-size: 1.1rem;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 0.5rem;
+}
+
+#del-btn{
+    background-color: rgb(186, 32, 32);
+    padding: 0.2rem 0.4rem;
+}
+
+#del-btn:hover{
+    background-color: rgb(202, 31, 31);
+    
+}
+
