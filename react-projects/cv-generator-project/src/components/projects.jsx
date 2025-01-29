@@ -121,6 +121,11 @@ function ProjectExperienceForm({ projects, setProjects }) {
   const addProjectExperience = () => {
     const newProject= {
       id: Date.now(),
+      technology: "",
+      description: "",
+      projectName: "",
+      startDate: "",
+      endDate: "",
      
     };
     setProjects([...projects, newProject]);

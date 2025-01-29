@@ -8,7 +8,7 @@ function SkillsForm({skills, setSkills})
     const handleChange = (e) => {
         const {name,value} = e.target;
         console.log(name,value)
-        setGeneralInfo({...generalInfo,[name]:value})
+        setSkills({...skills,[name]:value})
     }
     return<>
     <div className="personal-container">

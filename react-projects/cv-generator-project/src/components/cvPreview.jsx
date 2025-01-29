@@ -1,6 +1,12 @@
 import "../styles/cv-preview-style.css";
 
-function CVPreview({ generalInfo, workExperience, educations }) {
+function CVPreview({
+  generalInfo,
+  workExperience,
+  educations,
+  projects,
+  skills,
+}) {
   return (
     <div className="cv-container">
       {/* Personal Info */}
@@ -184,28 +190,88 @@ function CVPreview({ generalInfo, workExperience, educations }) {
           ? educations.map((edu) =>
               edu.collegeName !== "" ? (
                 <div key={edu.id} className="cv-item">
-                    <div className="cv-item-header">
+                  <div className="cv-item-header">
                     <p>
-                    <strong>{edu.collegeName}</strong>
-                  </p>
-                  <p>
-                  {edu.startDate} {edu.startDate == "" ? "" : "-"}{" "}
-                  {edu.endDate}
-                  </p>
-                    </div>
-                 
+                      <strong>{edu.collegeName}</strong>
+                    </p>
+                    <p>
+                      {edu.startDate} {edu.startDate == "" ? "" : "-"}{" "}
+                      {edu.endDate}
+                    </p>
+                  </div>
+
                   <p>
                     {edu.degree == "" ? "" : "-"} {edu.degree}{" "}
-                    {edu.gpa == "" ? "" : "- GPA: "}{edu.gpa}
+                    {edu.gpa == "" ? "" : "- GPA: "}
+                    {edu.gpa}
                   </p>
-                 
-                  <p id="course-work"><strong>Coursework: </strong> {edu.courseWork}</p>
+
+                  <p id="course-work">
+                    <strong>Coursework: </strong> {edu.courseWork}
+                  </p>
                 </div>
               ) : (
                 ""
               )
             )
           : ""}
+      </div>
+
+      <div className="cv-section">
+        <h3>Projects</h3>
+        {projects.length > 0
+          ? projects.map((project) => (
+              <div className="cv-item" key={project.id}>
+                <div className="cv-item-header">
+                  <p>
+                    <strong style={{ fontWeight: 600 }}>
+                      {project.projectName}
+                    </strong>{" "}
+                  </p>
+                  <p>
+                    {project.startDate} {project.startDate == "" ? "" : "-"}{" "}
+                    {project.endDate}
+                  </p>
+                </div>
+
+                <p>
+                  {project.technology != "" ? "Technologies: " : ""}
+                  {project.technology}
+                </p>
+
+                <ul>
+                  {project.description
+                    .split("\n")
+                    .map(
+                      (line, index) =>
+                        line.trim() && <li key={index}>{line}</li>
+                    )}
+                </ul>
+              </div>
+            ))
+          : ""}
+      </div>
+
+      <div className="cv-section">
+        <h3>Technical Skills</h3>
+        <div className="skills-info">
+          <p>
+            {skills.languages !== "" ? "Languages: " : ""}
+            {skills.languages}
+          </p>
+          <p>
+            {skills.frameworks !== "" ? "Frameworks: " : ""}
+            {skills.frameworks}
+          </p>
+          <p>
+            {skills.tools !== "" ? "Developer Tools: " : ""}
+            {skills.tools}
+          </p>
+          <p>
+            {skills.libraries !== "" ? "Libraries: " : ""}
+            {skills.libraries}
+          </p>
+        </div>
       </div>
     </div>
   );

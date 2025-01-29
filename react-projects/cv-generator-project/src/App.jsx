@@ -14,7 +14,12 @@ function App() {
     phone: "",
   });
 
-  const [skills, setSkills] = useState({});
+  const [skills, setSkills] = useState({
+    languages: "",
+    frameworks: "",
+    tools: "",
+    libraries: ""
+  });
 
   const [education, setEducation] = useState([]);
   const [workExperience, setWorkExperience] = useState([]);
@@ -46,7 +51,12 @@ function App() {
         
       </div>
       <div className="cv-preview">
-        <CVPreview generalInfo={generalInfo} educations={education} workExperience={workExperience}/>
+        <CVPreview 
+        generalInfo={generalInfo} 
+        educations={education} 
+        workExperience={workExperience} 
+        projects={projects} 
+        skills={skills}/>
       </div>
     </div>
   );
