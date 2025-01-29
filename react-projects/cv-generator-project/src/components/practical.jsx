@@ -11,13 +11,14 @@ function PracticalForm({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log("name:", name, "value:", value);
-    setFormData({ ...formData, [name]: value });
+    const updatedFormData = { ...formData, [name]: value };
+    setFormData(updatedFormData);
+    updateWorkExperience(updatedFormData);
   };
 
   const handleSave = (e) => {
     e.preventDefault();
-    updateWorkExperience(formData);
+    
     setEditingId(null);
   };
 

@@ -27,7 +27,7 @@ function App() {
           </button>
         </div>
 
-       <GeneralForm />
+       <GeneralForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
 
         
           

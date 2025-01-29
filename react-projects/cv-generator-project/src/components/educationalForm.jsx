@@ -16,12 +16,14 @@ function EducationalForm({
 
     const handleChange = (e) => {
         const {name, value} = e.target;
-        setFormData({...formData,[name]:value});
+        const updatedFormData = {...formData,[name]:value};
+        setFormData(updatedFormData);
+        updateEducationalExperience(updatedFormData);
     }
 
     const handleSave = (e) => {
         e.preventDefault();
-        updateEducationalExperience(formData);
+        
         setEditingId(null);
     }
 
