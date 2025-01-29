@@ -153,20 +153,26 @@ function CVPreview({ generalInfo, workExperience, educations }) {
                     <strong style={{ fontWeight: 600 }}>
                       {work.positionTitle}
                     </strong>{" "}
-                    -
+                    {work.positionTitle == "" ? "" : "-"}
                     <strong style={{ fontWeight: 500 }}>
                       {" "}
                       {work.companyName}
                     </strong>
                   </p>
                   <p>
-                    {work.startDate} - {work.endDate}
+                    {work.startDate} {work.startDate == "" ? "" : "-"}{" "}
+                    {work.endDate}
                   </p>
                 </div>
 
-                <ul>{work.mainWork.split("\n").map((line,index) => (
-                    line.trim() && <li key={index}>{line}</li>
-                ))}</ul>
+                <ul>
+                  {work.mainWork
+                    .split("\n")
+                    .map(
+                      (line, index) =>
+                        line.trim() && <li key={index}>{line}</li>
+                    )}
+                </ul>
               </div>
             ))
           : ""}
@@ -178,16 +184,22 @@ function CVPreview({ generalInfo, workExperience, educations }) {
           ? educations.map((edu) =>
               edu.collegeName !== "" ? (
                 <div key={edu.id} className="cv-item">
-                  <p>
+                    <div className="cv-item-header">
+                    <p>
                     <strong>{edu.collegeName}</strong>
                   </p>
                   <p>
-                    {edu.degree} - GPA: {edu.gpa}
+                  {edu.startDate} {edu.startDate == "" ? "" : "-"}{" "}
+                  {edu.endDate}
                   </p>
+                    </div>
+                 
                   <p>
-                    {edu.startDate} - {edu.endDate}
+                    {edu.degree == "" ? "" : "-"} {edu.degree}{" "}
+                    {edu.gpa == "" ? "" : "- GPA: "}{edu.gpa}
                   </p>
-                  <p>Coursework: {edu.courseWork}</p>
+                 
+                  <p id="course-work"><strong>Coursework: </strong> {edu.courseWork}</p>
                 </div>
               ) : (
                 ""

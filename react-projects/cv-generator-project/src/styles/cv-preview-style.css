@@ -87,3 +87,7 @@ ul{
 li{
     margin-bottom: 0.5rem;
 }
+
+#course-work{
+    max-width: 75%;
+}

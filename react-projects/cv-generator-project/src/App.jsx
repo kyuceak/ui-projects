@@ -4,6 +4,8 @@ import PracticalExperienceForm from './components/practical';
 import "./App.css";
 import { useState } from "react";
 import CVPreview from './components/cvPreview';
+import ProjectExperienceForm from './components/projects';
+import SkillsForm from './components/skills';
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({
@@ -12,8 +14,11 @@ function App() {
     phone: "",
   });
 
+  const [skills, setSkills] = useState({});
+
   const [education, setEducation] = useState([]);
   const [workExperience, setWorkExperience] = useState([]);
+  const [projects, setProjects] = useState([]);
 
 
 
@@ -36,6 +41,8 @@ function App() {
           
 
         <EducationalExperienceForm educations={education} setEducation={setEducation}/>
+        <ProjectExperienceForm projects={projects} setProjects={setProjects}/>
+        <SkillsForm skills={skills} setSkills={setSkills}/>
         
       </div>
       <div className="cv-preview">

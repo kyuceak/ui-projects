@@ -52,7 +52,7 @@ function EducationalForm({
           <div className="input-box">
               <label htmlFor="">GPA:</label>
               <input 
-              type="number"
+              type="text"
               name="gpa"
               value={formData.gpa}
               onChange={handleChange}/>
@@ -141,7 +141,7 @@ function EducationalExperienceForm({educations,setEducation})
             id: Date.now(),
             collegeName: "",
             degree: "",
-            gpa: 0,
+            gpa: "",
             courseWork: "",
             startDate: "",
             endDate: ""

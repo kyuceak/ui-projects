@@ -12,6 +12,8 @@ body{
 
 .app {
   display: flex;
+  height: 100vh;
+ 
 }
 
 
@@ -37,11 +39,12 @@ body{
   flex: 1;
   padding: 20px;
   background-color: #ff8484;
-  min-height: 100vh;
+  max-height: 100vh;
   max-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-y: auto; /* Allow scrolling in sidebar */
 }
 
 .input-box{
