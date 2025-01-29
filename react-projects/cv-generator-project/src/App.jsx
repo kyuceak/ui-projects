@@ -24,7 +24,24 @@ function App() {
   const [education, setEducation] = useState([]);
   const [workExperience, setWorkExperience] = useState([]);
   const [projects, setProjects] = useState([]);
-
+  const [resetTrigger, setResetTrigger] = useState(false);
+  const resetData = () => {
+    setResetTrigger((prev) => !prev); 
+    setGeneralInfo({
+      fullName: "",
+      email: "",
+      phone: "",
+      github: "",
+      linkedin:""
+    });
+    setSkills({ languages: "",
+      frameworks: "",
+      tools: "",
+      libraries: ""});
+    setEducation([]);
+    setWorkExperience([]);
+    setProjects([]);
+  }
 
 
   return (
@@ -32,22 +49,22 @@ function App() {
       <div className="sidebar">
         <div className="header-sidebar">
           <h1>Resume Generator</h1>
-          <button type="button" id="reset-btn">
+          <button type="button" id="reset-btn" onClick={resetData}>
             Reset
           </button>
         </div>
 
-       <GeneralForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
+       <GeneralForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo}  />
 
         
           
             
-       <PracticalExperienceForm workExperience={workExperience} setWorkExperience={setWorkExperience} />
+       <PracticalExperienceForm workExperience={workExperience} setWorkExperience={setWorkExperience} resetTrigger={resetTrigger}/>
           
 
-        <EducationalExperienceForm educations={education} setEducation={setEducation}/>
-        <ProjectExperienceForm projects={projects} setProjects={setProjects}/>
-        <SkillsForm skills={skills} setSkills={setSkills}/>
+        <EducationalExperienceForm educations={education} setEducation={setEducation} resetTrigger={resetTrigger}/>
+        <ProjectExperienceForm projects={projects} setProjects={setProjects} resetTrigger={resetTrigger}/>
+        <SkillsForm skills={skills} setSkills={setSkills} />
         
       </div>
       <div className="cv-preview">

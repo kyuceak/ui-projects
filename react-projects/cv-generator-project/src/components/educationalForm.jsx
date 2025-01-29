@@ -1,6 +1,7 @@
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "../styles/educational-style.css"
+
 
 
 
@@ -132,9 +133,12 @@ function EducationalForm({
 }
 
 
-function EducationalExperienceForm({educations,setEducation})
+function EducationalExperienceForm({educations,setEducation, resetTrigger})
 {
     const [editingId, setEditingId] = useState(null);
+    useEffect(() => {
+        setEditingId(null);
+      }, [resetTrigger]);
 
     const addEducationExperience = () => {
         const newEducation = {

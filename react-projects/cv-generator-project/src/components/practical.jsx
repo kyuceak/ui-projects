@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "../styles/practical-style.css";
 
 function PracticalForm({
@@ -119,8 +119,13 @@ function PracticalForm({
   );
 }
 
-function PracticalExperienceForm({ workExperience, setWorkExperience }) {
+function PracticalExperienceForm({ workExperience, setWorkExperience,resetTrigger }) {
   const [editingId, setEditingId] = useState(null);
+
+
+    useEffect(() => {
+        setEditingId(null);
+    }, [resetTrigger]);
 
   const addWorkExperience = () => {
     const newWork = {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/educational-style.css";
 
 function ProjectForm({
@@ -115,8 +115,12 @@ function ProjectForm({
   );
 }
 
-function ProjectExperienceForm({ projects, setProjects }) {
+function ProjectExperienceForm({ projects, setProjects,resetTrigger }) {
   const [editingId, setEditingId] = useState(null);
+
+  useEffect(() => {
+          setEditingId(null);
+      }, [resetTrigger]);
 
   const addProjectExperience = () => {
     const newProject= {

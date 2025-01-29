@@ -143,3 +143,16 @@ h2{
 .cv h2, .cv h3 {
   margin: 10px 0;
 }
+
+@media (max-width:768px){
+  .app{
+    flex-direction: column;
+  }
+  .sidebar{
+    position: static;
+    max-width: none;
+  }
+  .cv-preview{
+    align-items: normal !important;
+  }
+}
