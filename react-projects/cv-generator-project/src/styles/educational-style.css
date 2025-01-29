@@ -2,8 +2,16 @@
 
 .my-container{
     background-color: #fff;
-    padding: 2rem 2rem;
+    /* padding: 2rem 2rem; */
     box-shadow: 0 0 10px 10px rgb(0,0,0,0.2);
     border-radius: 0.5rem;
     margin-top: 1rem;
+    position: relative;
+    margin-bottom: 3rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
+
+.my-container h2{
+    margin: 2rem;
+}

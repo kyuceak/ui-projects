@@ -1,14 +1,13 @@
 import GeneralForm from './components/generalForm';
 import EducationalExperienceForm from './components/educationalForm';
 import PracticalExperienceForm from './components/practical';
-// import CVPreview from './components/CVPreview';
 import "./App.css";
 import { useState } from "react";
+import CVPreview from './components/cvPreview';
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
   });
@@ -36,10 +35,12 @@ function App() {
        <PracticalExperienceForm workExperience={workExperience} setWorkExperience={setWorkExperience} />
           
 
-        <EducationalExperienceForm/>
+        <EducationalExperienceForm educations={education} setEducation={setEducation}/>
         
       </div>
-      <div className="cv-preview"></div>
+      <div className="cv-preview">
+        <CVPreview generalInfo={generalInfo} educations={education} workExperience={workExperience}/>
+      </div>
     </div>
   );
 }

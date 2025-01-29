@@ -15,13 +15,14 @@ function PracticalForm({
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     updateWorkExperience(formData);
     setEditingId(null);
   };
 
   return (
-    <form action="" className="practical-form">
+    <form action="" className="practical-form" onSubmit={handleSave}>
       <div className="input-box">
         <label htmlFor="">Company Name:</label>
         <input
@@ -29,6 +30,7 @@ function PracticalForm({
           name="companyName"
           value={formData.companyName}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="input-box">
@@ -38,6 +40,7 @@ function PracticalForm({
           name="positionTitle"
           value={formData.positionTitle}
           onChange={handleChange}
+          
         />
       </div>
       <div className="input-box">
@@ -52,12 +55,21 @@ function PracticalForm({
 
         <div className="input-box">
             <label htmlFor="">Start Date:</label>
-            <input type="date" />
+            <input 
+            type="date" 
+            name="startDate"
+            value={formData.startDate}
+            onChange={handleChange}
+            />
         </div>
 
         <div className="input-box">
             <label htmlFor="">End Date:</label>
-            <input type="date" name=""  />
+            <input 
+            type="date" 
+            name="endDate"
+            value={formData.endDate}
+            onChange={handleChange}  />
         </div>
       </div>
 
@@ -97,7 +109,7 @@ function PracticalForm({
         </svg>
           </span>
         </button>
-        <button onClick={handleSave} id="save-btn">
+        <button  id="save-btn">
           Save
         </button>
         
@@ -153,6 +165,7 @@ function PracticalExperienceForm({ workExperience, setWorkExperience }) {
                   setEditingId={setEditingId}
                 />
               ) : (
+                editingId !== null ? null :
                 <div
                   key={work.id}
                   className="work-summary"
@@ -167,55 +180,58 @@ function PracticalExperienceForm({ workExperience, setWorkExperience }) {
           }
         </div>
 
-        <button className="pls-btn" onClick={addWorkExperience}>
-          <svg
-            viewBox="0 -0.5 21 21"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            fill="#197bb8"
-            stroke="#197bb8"
-            id="pls-btn"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              {" "}
-              <title>plus_circle [#197bb81441]</title>{" "}
-              <desc>Created with Sketch.</desc> <defs> </defs>{" "}
+          {
+            editingId !== null ? null :  <button className="pls-btn" onClick={addWorkExperience}>
+            <svg
+              viewBox="0 -0.5 21 21"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              fill="#197bb8"
+              stroke="#197bb8"
+              id="pls-btn"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
-                id="Page-1"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fill-rule="evenodd"
-              >
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
                 {" "}
+                <title>plus_circle [#197bb81441]</title>{" "}
+                <desc>Created with Sketch.</desc> <defs> </defs>{" "}
                 <g
-                  id="Dribbble-Light-Preview"
-                  transform="translate(-419.000000, -520.000000)"
-                  fill="#197bb8"
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
                 >
                   {" "}
-                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <g
+                    id="Dribbble-Light-Preview"
+                    transform="translate(-419.000000, -520.000000)"
+                    fill="#197bb8"
+                  >
                     {" "}
-                    <path
-                      d="M374.55,369 L377.7,369 L377.7,371 L374.55,371 L374.55,374 L372.45,374 L372.45,371 L369.3,371 L369.3,369 L372.45,369 L372.45,366 L374.55,366 L374.55,369 Z M373.5,378 C368.86845,378 365.1,374.411 365.1,370 C365.1,365.589 368.86845,362 373.5,362 C378.13155,362 381.9,365.589 381.9,370 C381.9,374.411 378.13155,378 373.5,378 L373.5,378 Z M373.5,360 C367.70085,360 363,364.477 363,370 C363,375.523 367.70085,380 373.5,380 C379.29915,380 384,375.523 384,370 C384,364.477 379.29915,360 373.5,360 L373.5,360 Z"
-                      id="plus_circle-[#197bb81441]"
-                    >
+                    <g id="icons" transform="translate(56.000000, 160.000000)">
                       {" "}
-                    </path>{" "}
+                      <path
+                        d="M374.55,369 L377.7,369 L377.7,371 L374.55,371 L374.55,374 L372.45,374 L372.45,371 L369.3,371 L369.3,369 L372.45,369 L372.45,366 L374.55,366 L374.55,369 Z M373.5,378 C368.86845,378 365.1,374.411 365.1,370 C365.1,365.589 368.86845,362 373.5,362 C378.13155,362 381.9,365.589 381.9,370 C381.9,374.411 378.13155,378 373.5,378 L373.5,378 Z M373.5,360 C367.70085,360 363,364.477 363,370 C363,375.523 367.70085,380 373.5,380 C379.29915,380 384,375.523 384,370 C384,364.477 379.29915,360 373.5,360 L373.5,360 Z"
+                        id="plus_circle-[#197bb81441]"
+                      >
+                        {" "}
+                      </path>{" "}
+                    </g>{" "}
                   </g>{" "}
                 </g>{" "}
-              </g>{" "}
-            </g>
-          </svg>
-          <span className="pls-text">Experience</span>
-        </button>
+              </g>
+            </svg>
+            <span className="pls-text">Experience</span>
+          </button>
+          }
+       
       </div>
     </>
   );

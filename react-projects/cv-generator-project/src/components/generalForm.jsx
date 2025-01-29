@@ -1,7 +1,7 @@
 
 
 
-function GeneralForm()
+function GeneralForm({})
 {
 
     return<>
@@ -10,7 +10,7 @@ function GeneralForm()
     <form action="" className="personal-form">
       <div className="input-box">
         <label htmlFor="">Full Name:</label>
-        <input type="text" />
+        <input type="text" name="fullName"  />
       </div>
       <div className="input-box">
         <label htmlFor="">Phone Number:</label>
